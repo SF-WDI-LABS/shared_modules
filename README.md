@@ -3,6 +3,7 @@
 | Objectives       |  
 | :------------------- |  
 | Add models to a Rails app |
+| Install a Ruby Gem to create seed data |
 | Seed a Rails database |
 | Write ActiveRecord queries |  
 ---
@@ -19,6 +20,47 @@ Convert these English statements into queries. Consult the [Rails docs](http://g
 3. Give me all the answers with more than 100 upvotes.
 
 4. Give me all the articles.
+
+
+#### Warmup with FFaker
+
+##### 1 hello.rb
+Copy or download the starter file `hello.rb`
+
+When you run `ruby hello.rb` you should see the following printed to your terminal:
+
+    "Hello, my name is Generic Student and I live at 123 Rudimentary Dr, Oakland California. I lurv geraniums!"
+
+Modify the output to use __string interpolation__ (hint: `#{first_name}`), and your own name, address, and most favoritest thing in the world.
+
+Bonus: print it ten times.
+
+##### 2 speakers
+Modify `hello.rb` so that when you run `ruby hello.rb` you see 10 lines of output, formatted like so:
+
+    Reichel Theresia, giovani@gmail.com, 415-253-3253
+    Botsford Vicenta, ernestine@gmail.com, 716-282-1443
+    Waters Nayeli, annabel_walter@gmail.com, 415-793-2549
+    ...
+
+
+This output should _NOT_ be hardcoded. It should change for every run of the file!
+
+To achieve this goal, you will need to familiarize yourself with the `ffaker` gem.
+
+First, install the gems in your `Gemfile`. Simply run:  
+```bash
+bundle install
+#or just
+bundle
+```
+
+You can also install gems individually (e.g. `gem install ffaker`), but `bundle` is better in this case.
+
+Now dive into [FFaker's Documentation](https://github.com/ffaker/ffaker/blob/master/REFERENCE.md)!
+
+## Ready for Rails!
+
 
 #### 1. Create a new rails application
 ``` bash
@@ -81,8 +123,8 @@ The `seeds.rb` file is magic, because it _already_ knows about all of the models
 Now, back in the rails console, type `Speaker.all`. Does it show the new speaker you just created?
 
 
-#### Exercises ([Active Record docs](http://guides.rubyonrails.org/active_record_basics.html) will help)
-Seed your database with at least 3 speakers using the FFaker gem. HINT: add `gem ffaker` to your `GEMFILE` then `bundle install` it. [ffaker documentation](https://github.com/ffaker/ffaker/blob/master/REFERENCE.md)
+#### Exercises
+Seed your database with 10 speakers using the FFaker gem.
 
 Using the rails console:
 
