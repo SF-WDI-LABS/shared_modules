@@ -6,7 +6,7 @@ Fill out these empty function definitions.  Unless specified, simply have the fu
 
 For some of the problems, you will have to use functions or other variables supplied by JavaScript's built-in `Math` object.  [Here is the documentation on using the `Math` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math).
 
-### Example Usage
+**Example Usage of `Math`**
 ```javascript
 	var absoluteValue = Math.abs(-4);
 	// evaluates to 4
@@ -174,3 +174,44 @@ function printPyramid(length) {
 }
 ```
 
+<!--## 10. Stretch Challenge: Functions are varibles too! -->
+
+<!--Functions can take other functions as input. Write a function `wrap` that takes another function as input, calls the function, and console logs the result surrounded by exclaimation points.-->
+
+<!--```js-->
+<!--function wrap(myFunction){-->
+	// TODO: Place your code here
+<!--	console.log("!" + myFunction() + "!");-->
+<!--}-->
+
+
+<!--function returnCoolName(){-->
+<!--	return "Ali";-->
+<!--}-->
+<!--wrap(returnCoolName);-->
+// displays !Ali!
+<!--```-->
+
+<!--Write a function that takes in a string and returns a function that console.logs that number of exclamation points.-->
+
+
+<!--```javascript-->
+<!--function createHoorayFunction(num) {-->
+<!--	return function newFunction(){-->
+		// TODO: Place your code here
+<!--		for (var i=0; i<num; i++){-->
+<!--			console.log("!");-->
+<!--		}-->
+<!--		console.log(out);-->
+<!--	}-->
+<!--}-->
+
+<!--var hoorayFiveFunction = createHoorayFunction(5);-->
+<!--hoorayFiveFunction();-->
+// displays 
+// !
+// !
+// !
+// !
+// !
+<!--```-->
