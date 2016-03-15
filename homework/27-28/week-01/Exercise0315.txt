@@ -1,0 +1,44 @@
+true || false                                               true
+false && false                                              false
+true && false                                               false
+(false || true) && true                                     true
+false && ((true || false) && (false || true))               false
+
+
+
+
+
+var username = true;
+var password = true;
+
+if (username && password) {
+    console.log("All good");
+} else if ( username === "" ) {
+    console.log("Missing Username");
+} else if ( password.length === 0 ) {
+    console.log("Missing Password");
+}
+
+"All good"
+
+
+
+isBirdlike = true;
+hasFeathers = false;
+isPlanelike = true;
+isMadeOfMetal = false;
+if (isBirdlike && !hasFeathers || isPlanelike && !isMadeOfMetal) {
+    alert("It's Superman!");
+}
+
+
+
+var isHotBeverage = false;
+var isHotBakedGood = false;
+var isColdPreparedFood = false;
+var forHere = true;
+var total = 100;
+if ( forHere) {
+    total = total + (total*0.0775)
+}
+console.log( total )
