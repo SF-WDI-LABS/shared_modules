@@ -1,8 +1,10 @@
-true || false                                               true
-false && false                                              false
-true && false                                               false
-(false || true) && true                                     true
-false && ((true || false) && (false || true))               false
+true || false                                       //true                                           true
+false && false                                      //false                                        false
+true && false                                       //false                                        false
+(false || true) && true                             //true                              true
+false && ((true || false) && (false || true))       //false              false
+
+// false, undefined, 0, NaN, "", null
 
 
 
@@ -10,7 +12,6 @@ false && ((true || false) && (false || true))               false
 
 var username = true;
 var password = true;
-
 if (username && password) {
     console.log("All good");
 } else if ( username === "" ) {
@@ -19,7 +20,18 @@ if (username && password) {
     console.log("Missing Password");
 }
 
-"All good"
+
+
+"use strict";
+var OrderUp="";
+var order = "One Sloppy";
+if (OrderUp) {
+    order = order + OrderUp;
+} else {
+    order = order + "Burger"
+}
+console.log(order);
+
 
 
 
@@ -33,6 +45,8 @@ if (isBirdlike && !hasFeathers || isPlanelike && !isMadeOfMetal) {
 
 
 
+
+
 var isHotBeverage = false;
 var isHotBakedGood = false;
 var isColdPreparedFood = false;
@@ -41,4 +55,49 @@ var total = 100;
 if ( forHere) {
     total = total + (total*0.0775)
 }
-console.log( total )
+console.log( total)
+
+
+
+
+
+var bossIsLooking = false;
+var withAdult = true;
+var tokens = 10;
+var age = 11;
+var height = 48;
+if (!bossIsLooking) {
+    console.log("Enjoy the ride!!")
+} else if (tokens >= 5) {
+    if (height >= 48) {
+        if (age >= 12 || withAdult) {
+            console.log("Enjoy the ride!!")
+            tokens = tokens - 5;
+        } else {
+            console.log("Sorry, young one! You need an adult with you.")
+        }
+    } else {
+        console.log("Sorry, you're not tall enough!")
+    }
+} else {
+    console.log("Sorry, get more tokens!")
+}
+
+
+
+
+
+
+
+
+var beerBottles = 6;
+    while(beerBottles--){
+        console.log(beerBottles + " bottles of beer on the wall,")
+        console.log(beerBottles + " bottles of beer!")
+        console.log("Take one down, pass it around")
+        if (beerBottles){
+            console.log(beerBottles-1 + " bottles of beer on the wall")
+        } else {
+            console.log("No more bottles of beer on the wall!")
+        }
+    }
