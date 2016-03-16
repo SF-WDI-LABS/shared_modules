@@ -38,7 +38,7 @@ The function below will display the message `"Hi, everyone!"` to a console.
 ```javascript    
     function greetEveryone() {
         // anything inside the curly braces will be executed
-        console.log("Hi, everyone!");
+        return "Hi, everyone!";
     }
 ```
     
@@ -53,15 +53,15 @@ When a function receives a parameter, it will use that value to perform an actio
 
 ```javascript
     function greetPerson(name) {
-        console.log("Hello " + name);
+        return "Hello " + name);
     }
 ```
 
 Similar to calling a function without parameters, the function name is called as a statement.  Parameters are passed into the function within the parenthesis.
 
 ```javascript
-    var name = "Jeff";
-    greetPerson(name); // Hello Jeff
+    greetPerson(); // Hello undefined
+    greetPerson("Jeff"); // Hello Jeff
 ```
 
 ###Say hello to some students
@@ -85,7 +85,7 @@ Functions can take multiple paramters.  Each parameter must be separated from an
 ```javascript
    	// Add two integers
     function sum(a, b) {
-        console.log(a + b);
+        return a + b;
     }
     
     var x = 6;
@@ -100,19 +100,19 @@ Functions can take multiple paramters.  Each parameter must be separated from an
 ```javascript
     // Subtract two integers
     function subtract(a, b) {
-        console.log(a - b);
+        return a - b;
     }
 ```
 ``` javascript  
     // Multiply two integers
     function multiply(a, b) {
-        console.log(a  *  b);
+        return a  *  b;
     }
 ```
 ```javascript
     // Divide two integers
     function divide(a, b) {
-        console.log(a / b);
+        return a / b;
     }
 ``` 
 
@@ -125,7 +125,7 @@ Functions may perform actions upon Strings as well.
 ```javascript
     // convert String to uppercase
     function shout(phrase) {
-        console.log(phrase.toUpperCase());
+        return phrase.toUpperCase();
     }
     
     var phrase = 'i am mighty.'
@@ -134,7 +134,7 @@ Functions may perform actions upon Strings as well.
 ```javascript
     // convert String to lowercase
     function whisper(phrase) {
-        console.log(phrase.toLowerCase());
+        return phrase.toLowerCase();
     }
     
     whisper("I AM SMALL"); // i am small
@@ -142,11 +142,10 @@ Functions may perform actions upon Strings as well.
 ```javascript
     // append an exclamation point to the end of a phrase
     function exclaim(phrase) {
-        console.log(phrase + '!');
+        return phrase + '!';
     }
     
-    var phrase = "Avast, ye mateys";
-    exclaim(phrase); // Avast, ye mateys!
+    exclaim("Avast, ye mateys"); // Avast, ye mateys!
 ```
 
 **Note:** When naming Javascript functions, it is best practice to 
@@ -169,32 +168,48 @@ Functions may perform actions upon Strings as well.
 ```javascript
     // convert spaces to dashes in a phrase
     function spacesToDashes(phrase) {
-        console.log(phrase.replace(/ /g, "-"));
+        return phrase.replace(/ /g, "-");
     }
     
-    var phrase = "Dash is also a great API lookup tool!";
-    spacesToDashes(phrase); // Dash-is-also-a-great-API-lookup-tool!
+    spacesToDashes("Dash is also a great API lookup tool!"); // Dash-is-also-a-great-API-lookup-tool!
 ```
 
 In the case of the function spacesToDashes, the function description 'spaces to dashes' the first letters were capitalized and the phrase was concatenated to 'spacesToDashes'
     
-## Functions with Return Values
-The above functions use console.log() to display the result of their internal actions to the screen.  Functions also have the ability to send results back for later use.
+##Explicit vs. Implicit Return Values
+Functions that return a variable or value are said to have *Explicit* returns.  Functions that simply have a return statement without a variable or value following it are called *Implicit* returns.  Implicit returns will returned an `undefined` value, which is perfectly fine!  Calling the return statement in a function simply signals that the function should end and return control back to the point that called the said function.
 
-```javascript
-    // square a number and return the new value
-    function square(a) {
-      return a * a;
-    }
+###Explicit Example
+``` javascript
+function explicitFunction() {
+    return "Here Is My Explicit Return Value";
+}
 
-    var mySquaredValue = square(8);
-    console.log(mySquaredValue); // 64
+var returnValue = explicitFunction():
+returnValue === "Here Is My Explicit Return Value"; // true
 ```
-The particular function above multiplies the value it received as a parameter by itself and *returns* the resulting product back to the point where it was called.  The variable `mySquaredValue` now has the *return* value of hte function `square(8)` assigned to it. 
 
+###Implicit Example
 
+``` javascript
+function implicitFunction() {
+    // What do I return?
+}
 
-##Functions on Booleans
+var returnValue = implicitFunction():
+returnValue === undefined; // true
+```
+
+``` javascript
+function implicitFunction2() {
+    return; // What do I return?
+}
+
+var returnValue = implicitFunction2():
+returnValue === undefined; // true
+```
+
+##Functions and Booleans
 Functions are able to receive and return boolean values.  Functions that return boolean values are commonly used to check the states of variables and whether conditions are met.
 
 > **Note:** It is best practice to name functions with boolean return values with a prefix of 'is', 'has', or 'can.'
@@ -216,24 +231,21 @@ function hasCheezburger(answer)){
         console.log("Y no Cheezburger?");
     }
 }
-var answer = true;
-hasCheezeburger(answer); // Can I haz ur Cheezburger?
+
+hasCheezeburger(true);
+// Can I haz ur Cheezburger?
+=> undefined
 ```
 
 ### Function with boolean return value
 ```javascript
 // checks if number is greater or less than 5
 function isGreaterThanFive(number){
-    if(number > 5) {
-        return true;
-    } else {
-        return false;
-    } 
+    return number > 5;
 }
 
-var number = 3;
-var result = isGreaterThanFive(number);
-console.log(result); // false; 
+var result = isGreaterThanFive(3);
+result; // false; 
 ```
 The above function has two return statements.  Since both are within an `if / else ` statement, only one will apply to the condition.  Once a return statement is executed the function ends.  This ensures that only one return statement can be executed per function.  
 
@@ -250,10 +262,18 @@ function completelyDisagree(option) {
         return true;
     }
 }
-    
+
 var iAmRight = true;
 var doYouAgree = completelyDisagree(iAmRight);
-console.log(doYouAgree); // false
+doYouAgree; // false
+```
+
+It turns out this is the same as:
+
+``` javascript
+function completelyDisagree(option) {
+    return !option;
+}
 ```
 
 
@@ -274,9 +294,9 @@ function sliceBanana(slices){
 }
 
 sliceBanana(4);
-console.log(banana) ;
-=> 4
 => undefined
+banana;
+=> 4
 ```
 
 ```javascript
@@ -287,12 +307,11 @@ function multiplyBySix(x){
     return x;
 }
 
-console.log(multiplyBySix(4));
-=> 24
+multiplyBySix(4); // 24
 
 /* Attempting to display a local variable outside of its scope will return an undefined */
-console.log(mult);
-=> Uncaught ReferenceError: mult is not defined!!! So Bad!!!!
+mult;
+// Uncaught ReferenceError: mult is not defined!!! So Bad!!!!
 ```
 
 
@@ -328,7 +347,19 @@ function countDown(num){
 }
 
 countDown(10);
-=> 10 9 8 7 6 5 4 3 2 1 0
+// 10
+// 9
+// 8
+// 7
+// 6
+// 5
+// 4
+// 3
+// 2
+// 1
+// 0
+=> undefined
+
 ```
 
 ###What is this magic?!
