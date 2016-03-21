@@ -1,6 +1,6 @@
-## Challenge Set A: Array iterators ##
+## Exercises - Array iterators ##
 
-### Challenge 1 (map) ###
+### Challenge 1 (map) - [Solution](solutions.js)
 
 Elaine the Etsy Merchant thinks her prices are scaring off customers. Subtracting one penny might help:
 Help her out:
@@ -18,7 +18,7 @@ More Challenges:
 -  Prices are going up! Elaine needs to raise her prices by 5%.
 
 
-### Challenge 2 (filter) ###
+### Challenge 2 (filter) - [Solution](solutions.js)
 Is there an interesting trend in birthdays?  Do people tend to be born more on even-numbered dates or odd-numbered dates?  This is a great chance to do some serious science!
 
 ```javascript
@@ -34,7 +34,7 @@ evenBirthdates = [2, 4, 4, 12, 30];
 
 -  Share your results with the class and bask in your great science!
 
-### Challenge 3 (reduce) ###
+### Challenge 3 (reduce) - [Solution](solutions.js)
 Goyle has a lucrative dog walking business. He's made mucho moolah this summer. How much did he make?
 
 ```javascript
