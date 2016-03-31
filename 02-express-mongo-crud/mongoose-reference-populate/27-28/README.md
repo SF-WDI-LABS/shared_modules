@@ -5,7 +5,6 @@
 
 | Objectives |
 | :---- |
-| Describe one-to-one, one-to-many, and many-to-many data relationships. |
 | Write mongoose schemas for Mongoose's "reference" pattern of relating data. |
 | Build the appropriate queries for referenced data relationships using `populate()`. |
 | Incorporate referenced data handling into express server routes. |
@@ -14,49 +13,13 @@
 
 Real-world data usually consists of different types of things that are related to each other in some way. A banking app might need to track employees, customers, and accounts. A food ordering app needs to know about restaurants, menus, and its users!  We've seen that when data is very simple, we can combine it all into one model.  When data is more complex or less closely tied together, we often create two or more related models.
 
-Today we'll look at ways to think about relationships between two data records. The first is a brief foray into *cardinality* - how many of each type of thing participate in the relationship?
-
-The second deals with where data is stored.
-
-## Cardinality
-
-### One-to-One
-
-Each person has one brain, and each (living human) brain belongs to one person.
-
-<img src="https://raw.githubusercontent.com/sf-wdi-22-23/modules-23/master/w03-intro-backend-with-express/d4-weekend-lab/img/one_to_one.png" alt="one to one erd"  width="250">
-
-One-to-one relationships can sometimes just be modeled with simple attributes. A person and a brain are both complex enough that we might want to have their data in different models, with lots of different attributes on each.
+Today we'll look at how mongoose helps us store related data through _reference_.
 
 
-### One-to-Many
+## Data Relationships in Mongoose
 
-Each youtube creator has many videos, and each video was posted by one youtube creator.
+### Document Structure: Embed or Reference?
 
-<img src="https://raw.githubusercontent.com/sf-wdi-22-23/modules-23/master/w03-intro-backend-with-express/d4-weekend-lab/img/one_to_many.png" alt="one to many erd" width="250">
-
-### Many-to-Many
-
-Each student can go to many classes, and each class has many students.
-
-<img src="https://raw.githubusercontent.com/sf-wdi-22-23/modules-23/master/w03-intro-backend-with-express/d4-weekend-lab/img/many_to_many.png" alt="many to many erd"  width="250">
-
-### Entity Relationship Diagrams
-
-Entity relationship diagrams (ERDs) represent the relationships between data or entities.
-
-![Entity Relationship Diagram example](https://www.edrawsoft.com/images/examples/entity-relationship-diagram.png)
-
-Note: Attributes can be represented as line items under a heading (like all of the Item1, Item2, Item3 under each heading above) or as ovals stemming from the heading's rectangle.  
-
-[More guidelines for ERDs](http://docs.oracle.com/cd/A87860_01/doc/java.817/a81358/05_dev1.htm)
-
-
-## Organizing the Data: Data Relationships in Mongoose
-
-## Document Structure: Embed or Reference?
-
-While cardinality is often determined by real-world characteristics of a relationship, the decision to embed or reference data is a design decision.
 
 **Embedded Data** is directly nested *inside* of other data. Each record has a copy of the data.
 
@@ -76,7 +39,8 @@ It's often more *efficient* to embed data because you don't have to make a separ
 It's easier to stay *consistent* when you reference data because you only keep one copy around. You don't have to worry that you'll forget to update or delete one copy of the data.
 
 
-How would you design the following?
+
+The decision to embed or reference data is a design decision. How would you design the following?
 
 * A `User` that has many `Tweets`?
 * A `Food` that has many `Ingredients`?
