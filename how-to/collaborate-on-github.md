@@ -93,5 +93,6 @@ Your first task is to add user authentication. At the same time, Jessica is doin
 
 ## Git Tutorials
 
+* <a href="http://pcottle.github.io/learnGitBranching/">Learn Git Branching</a> (great visuals)
 * <a href="https://www.codeschool.com/courses/try-git" target="_blank">Try Git - Code School</a>
 * <a href="https://github.com/Gazler/githug" target="_blank">githug</a>
