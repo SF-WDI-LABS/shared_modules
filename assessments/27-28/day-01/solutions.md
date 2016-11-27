@@ -202,6 +202,9 @@
     age: 4903
   }
 
-  // array (technically an object)
+  // array (a kind of object)
   ["apple", "banana", "kiwi"]
+  
+  // function (also a kind of object)
+  function add(a,b) { return a+b; }
   ```
