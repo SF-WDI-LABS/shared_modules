@@ -40,11 +40,21 @@ Fill in the start time now, and come back for the rest of the questions in this 
 
 1. What do each of the following Terminal commands do?  Give an example of using each.
 
-  * `ls`  
+  * `ls` 
+    * list files in a directory (default is current directory)   
+    * `ls -a ~/Downloads`  
   * `cd`  
+    * change to a different directory   
+    * `cd ~/Desktop`   
   * `touch`   
+    * update timestamp on an existing file, or create the file if it doesn’t exist  
+    * `touch newfile.txt`
   * `mkdir`   
-  * `rm`  
+    * create a new directory  
+    * `mkdir ~/Desktop/wdi`  
+  * `rm` 
+    * permanently remove files or directories  
+    * `rm oldfile.txt`  
 
 
 
@@ -56,13 +66,44 @@ Fill in the start time now, and come back for the rest of the questions in this 
 1. Write HTML that would create the web page shown in the image below. 
 
   <img width="250px" src="https://cloud.githubusercontent.com/assets/3254910/20645466/2414946e-b414-11e6-8225-067040df0422.png">
+  
+  ```html
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<title>WDI Portfolio</title>
+		</head>
+		<body>
+			<h1>Starting WDI!</h1>
+			<p> I'm building cool projects. Check out my <a href="http://www.github.com">GitHub page</a>! Also, kitten.</p>
+			<img width="300px" src="https://cloud.githubusercontent.com/assets/3254910/20438972/5983c3f6-ad6e-11e6-8a38-58cc5d9c8015.jpg">
+
+		</body>
+	</html>
+  ```
       
 2. What is the DOM?  Draw the DOM tree for the HTML you wrote.
-	<img width="500px" src="https://cloud.githubusercontent.com/assets/3254910/20645634/ef702c0a-b418-11e6-969e-a374b61bcfee.png">
+  <img width="500px" src="https://cloud.githubusercontent.com/assets/3254910/20645634/ef702c0a-b418-11e6-969e-a374b61bcfee.png">
 
 3. What is an HTML "attribute"?  Give an example.
 
+	An attribute adds some extra information to an HTML tag.  It has an attribute name and a value. In the image HTML tag below, the src attribute has a value of "kitten.png", and the id attribute has a value of "kitten-picture".
+
+
+	`<img src="kitten.png" id="kitten-picture">`
+
+
+
+
 4. What is the difference between a class and an id in HTML? When would you use each?
+
+
+	Class - can be used many times on the same HTML page. Good for CSS that will be shared among elements or across pages. 
+
+
+	Id - should only be used once on each HTML page.  Good for JavaScript that needs to identify a specific element, like a form or button.
+
 
 
 ##Section 4: CSS
@@ -70,15 +111,26 @@ Fill in the start time now, and come back for the rest of the questions in this 
 
 1. My CSS is in a file called styles.css, in the same directory as my index.html file. What should I write in my index.html file to make sure my styles are linked?
 
+	```html
+	<link rel="stylesheet" href="styles.css">
+	```
+
 1. Draw the CSS box model.
 
 1. Write an HTML element that would match with each of the following selectors:
 
   * `#subscribe`  
+	  * `<button id="subscribe"></button>`
   * `article.featured`  
+	  * `<article class="featured"></article>`
   * `nav > ul`  
+		* `<nav> <ul></ul> </nav>`
 	
 1. What is CSS "specificity"?  Rank these in order of specificity from least specific to most specific:   `!important`, class, id, tag, inline style.
+
+	Specificity determines which CSS rules will apply to an element when more than one selector matches it. 
+	
+	Specificity order: tag, class, id, inline style, `!important`
 
 ##Section 5: JavaScript Language
 
@@ -123,11 +175,22 @@ Fill in the start time now, and come back for the rest of the questions in this 
 
 1. In JavaScript, when should you use =, ==, and ===?
 
+	* `=` is for assignment, storing a new value in a variable 
+	* `==` checks "loose equality" but ignores type differences. `1 == "1"` is `true`
+	* `===` checks "strict equality" so `1 === "1"` is `false`
+
+
 1. In the `scores` array below, how would you change the last score to 27?
 
 	```js
 	var scores = [26, 28, 30, 28, 17];
 	```
+	
+	```js
+	scores[4] = 27;
+	```
+	
+	
 
 1. In the `address` object below, how would you add the information that the "floor" for this address is 5?
 
@@ -140,6 +203,11 @@ Fill in the start time now, and come back for the rest of the questions in this 
 			zip: 94104
 	};
 	```
+		
+	```js
+	address["floor"] = 5;
+	```
+	
 
 
 1. What is the output of the following code?
@@ -151,6 +219,12 @@ Fill in the start time now, and come back for the rest of the questions in this 
 	}
 	```
 
+	It logs the following to the console:
+	```
+	"red"
+	"yellow"
+	"green"
+	```
 
 1. Consider the `combine` function below. What value does the `combine` function return for each of the function calls beneath it?
 
@@ -164,9 +238,9 @@ Fill in the start time now, and come back for the rest of the questions in this 
 	var x = 1;
 	var y = 7;
 
-	combine(x, y);       		      //=> ______________
+	combine(x, y);       		      //=> ______8______
 
-	combine(combine(x, y), 5);    //=> ______________
+	combine(combine(x, y), 5);    //=> _____13______
 	```
 
 
@@ -178,43 +252,65 @@ Fill in the start time now, and come back for the rest of the questions in this 
 	```js
 	function tempToWord(temp) {
 
-
-
-
-
-
 	}
 	```
 
-
+ 
+	```js
+	function tempToWord(temp) {
+		if(temp > 60){
+					return "warm";
+		} 
+		return "cool";
+	}
+	```
 
 1. Based on the `tempToWord` code you just wrote, what is the value returned for each of the following function calls:
 
 	```js
 	// input         	  //=> returned value
 
-	tempToWord(30);  	  //=>
+	tempToWord(30);  	  //=> "cool"
 
-	tempToWord(60); 	  //=>
+	tempToWord(60); 	  //=> "cool"
 
-	tempToWord(70);  	  //=>
+	tempToWord(70);  	  //=> "warm"
 	```
 
 ##Section 6: JavaScript for Web
 
 1. My JavaScript code is in a file called script.js, in the same directory as my index.html.  What can I write in index.html to connect my JavaScript to my HTML?
 
+	```html
+	<script src=“script.js”></script>
+	```
+
+
 1. What is an "event"? An "event listener"? 
+
+	An event is something that happens. 
+
+	An event listener prepares some code to be run when a particular event happens. 
+
 
 1. Which of the following tasks are capabilities of JavaScript? Choose two and write down the code for completing the task.
 
 	* Add an event listener to a DOM element  
+	  * `document.getElementById(“subscribe”).addEventListener(“click”, functionToRun);`  
 	* Create a DOM element  
+		* `document.createElement("p");`  
 	* Add a DOM element to the page  
+	  * `document.getElementById(“box”).appendChild(someElementVar);`  
 	* Access the HTML inside an element   
+    * `document.getElementById(“subscribe”).innerHTML;`
 	* Change the text inside an element   
+	  * `document.getElementById(“login-msg”).innerText = “Log Out”;`
 	* Change the source of an image  
-	* Add a class to an element  
+	  * `document.getElementById(“kitten-picture”).setAttribute(“src”, “keyboard-cat.png”);`
+	* Add a class to an element 
+	  * `document.getElementsByTagName(“article”)[0].classList.add(“featured”);`
+	
+	JavaScript can do all of these things! See code above. 
 
 1. I'm designing a to do list website where users can see a list of tasks they need to do, use a form to input a new task, and click on tasks to cross them off on the list. Pick three of the JavaScript capabilities you found in the last question. How would you advise me to use these for my to do list app?
 
