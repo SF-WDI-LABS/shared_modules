@@ -76,8 +76,9 @@ Fill in the start time now, and come back for the rest of the questions in this 
 		</head>
 		<body>
 			<h1>Starting WDI!</h1>
-			<p> I'm building cool projects. Check out my <a href="http://www.github.com">GitHub page</a>! Also, kitten.</p>
-			<img width="300px" src="https://cloud.githubusercontent.com/assets/3254910/20438972/5983c3f6-ad6e-11e6-8a38-58cc5d9c8015.jpg">
+			<p>I'm building cool projects. Check out my <a href="http://www.github.com">GitHub page</a>! 
+			   Also, kitten.</p>
+			<img src="kitten-picture.png">
 
 		</body>
 	</html>
