@@ -1,179 +1,90 @@
-# <img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="60"> Day 1 Assessment [SOLUTIONS]
+# <img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="60"> WDI Fundamentals Check-In [SOLUTIONS]
 
-**Instructions:** Do your best! Show your work - we’re more interested in your thought process and problem-solving skills than we are in exact syntax. Feel free to use code or "psuedo-code" (i.e. plain english).
+Answer the questions below to the best of your ability.  Feel free to reference your fundamentals workbook, other online resources, and any other notes you’d like. Please do not get help from another person. This check-in has 6 sections:
 
-1. Fill in the blank below. When executed, what will the last line of code evaluate to?
+* Reflection
+* Developer Tools 
+* HTML and the DOM
+* CSS
+* JavaScript Language
+* JavaScript for Web
 
-	```js
-	var student_name = "Bob";
-	var greeting = "Welcome to General Assembly, ";
-	console.log(greeting + student_name + "!");
-	```
 
-  ```js
-  // => "Welcome to General Assembly, Bob!"
-  ```
 
-2. Translate the following webpage into HTML (do not use any CSS styling).
 
-	![simple-html-page](https://cloud.githubusercontent.com/assets/1489337/13724295/031c7bd2-e836-11e5-882e-c2b24e9c6c9b.png)
+##Section 1: Reflection
 
-	```html
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>WDI 24</h1>
-    <h3>is awesome!</h3>
-    <p>I'm such a sweet coder, check out my <a href="https://github.com/username">GitHub page</a>.</p>
-    <p>I love <strong>puppies</strong>! Here is my favorite one:</p>
-    <img src="puppy.jpg">
-  </body>
-  </html>
-  ```
 
-3. Given the below code, how would you get the value `30`?
+Fill in the start time now, and come back for the rest of the questions in this section when you’re done. 
 
-	```js
-	var ages = [26, 28, 30, 28, 17];
-	```
 
-  ```js
-  ages[2];
-  ```
+1. Start time: __________________
 
-4. Given the below code, how would you add the name "Michael Nesmith" to the monkees?
+1. Approximate time taken: _____________________________
 
-    ```js
-    var monkees = ["Peter Tork", "Micky Dolenz", "Davy Jones"];
-    ```
+1. What’s something challenging from Fundamentals that you feel confident about?
 
-    ```js
-    monkees.push("Michael Nesmith");
-    ```
+1. What’s something from Fundamentals that you need to work on?
 
-	**4.1** How would you find the total number of band members?
+1. What resource(s) did you find most helpful?
 
-    ```js
-    monkees.length
-    ```
 
-5. Given the code below, how would you get the street part of the address?
-    ```js
-    var address = {
-        city: "San Francisco",
-        number: 225,
-        street: "Bush St.",
-        state: "CA",
-        zip: 94104
-    };
+##Section 2: Developer Tools
 
-    address["street"]   // "Bush St."
-    address['street']   // "Bush St."
-    address.street      // "Bush St."
-    ```
 
-6. Given the `combine` function below, what is the output of the following function calls:
+1. Computer skills: how many words per minute do you type, according to [http://www.thetypingcat.com/typing-speed-test](http://www.thetypingcat.com/typing-speed-test)?
 
-	```js
-	function combine (a, b) {
-		return a + b;
-	}
 
-	// input			   //=> output
+1. Computer skills: what happens when you use the Command (⌘) + Tab keyboard shortcut on a Mac?
 
-	combine("1", "2");     //=> "12"
-	combine(4, 5); 	       //=> 9
-	combine("8"); 	       //=> "8undefined"
-	combine(2, 3, 4); 	   //=> 5
 
-	var a = 1;
-	var b = 7;
-	var c = 19 + a;
-	combine(c, a);	       //=> 21
-	var x = combine(a, b);
-	combine(x, b);	       //=> 15
-	```
+1. What do each of the following Terminal commands do?  Give an example of using each.
 
-7. What is the output of the following code?
+  * `ls`  
+  * `cd`  
+  * `touch`   
+  * `mkdir`   
+  * `rm`  
 
-	```js
-	var rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 
-	for (var i = 0; i <= rainbowColors.length; i++) {
-	  console.log(rainbowColors[i]);
-	}
-	```
 
-  ```js
-  //=> "red"
-  //=> "orange"
-  //=> "yellow"
-  //=> "green"
-  //=> "blue"
-  //=> "indigo"
-  //=> "violet"
-	//=> undefined
+1. Describe or draw how git and GitHub work.  Include at least the terms "git commit", "local repository",  "remote repository", "git push", and "git pull". 
 
-	// note: `undefined` prints at the end, because the for loop goes through i <= rainbowColors.length (7). `rainbowColors[7]` is undefined.
-	// we didn't mark it wrong if you missed the `undefined` part - that was tricky :)
-  ```
+##Section 3: HTML & The DOM
 
-8. Write a function called `evaluateTemp` that returns "warm" or "cool" depending on the temperature. Anything above 50 degrees is "warm", while anything 50 degrees or below is "cool".
 
-	```js
-  function evaluateTemp (temp) {
-    if (temp > 50) {
-      return "warm";
-    } else {
-      return "cool";
-    }
-  }
-  ```
+1. Write HTML that would create the web page shown in the image below. 
 
-	**7.1** Based on the code you just wrote, what is the output of the following function calls:
+  <img width="250px" src="https://cloud.githubusercontent.com/assets/3254910/20645466/2414946e-b414-11e6-8225-067040df0422.png">
+      
+2. What is the DOM?  Draw the DOM tree for the HTML you wrote.
+	<img width="500px" src="https://cloud.githubusercontent.com/assets/3254910/20645634/ef702c0a-b418-11e6-969e-a374b61bcfee.png">
 
-	```js
-	// input		//=> output
+3. What is an HTML "attribute"?  Give an example.
 
-	evaluateTemp(30);  //=> "cool"
-	evaluateTemp(50);  //=> "cool"
-	evaluateTemp(70);  //=> "warm"
-	```
+4. What is the difference between a class and an id in HTML? When would you use each?
 
-9. Write a function called `findGreater` that takes two arguments and returns the greater of the pair.
 
-  ```js
-  function findGreater (num1, num2) {
-    if (num1 > num2) {
-      return num1;
-    } else if (num2 > num1) {
-      return num2;
-    }
-    return num1; // "The two numbers are equal";
-  }
-  ```
+##Section 4: CSS
 
-	**9.1** Based on the code you just wrote, what is the output of the following function calls:
 
-	```js
-	// input			      //=> output
+1. My CSS is in a file called styles.css, in the same directory as my index.html file. What should I write in my index.html file to make sure my styles are linked?
 
-	findGreater(7, 0);        //=> 7
-	findGreater(11, 11);      //=> 11
+1. Draw the CSS box model.
 
-	var b = 010;
-	var s = 100;
-	findGreater(b, s) === b;  //=> false
-	findGreater(s, 1) === s;  //=> true
-	```
+1. Write an HTML element that would match with each of the following selectors:
 
-10. Name as many JavaScript data types as you can think of. **Bonus:** give an example of each!
+  * `#subscribe`  
+  * `article.featured`  
+  * `nav > ul`  
+	
+1. What is CSS "specificity"?  Rank these in order of specificity from least specific to most specific:   `!important`, class, id, tag, inline style.
 
-  ```js
+##Section 5: JavaScript Language
+
+1. List 3 JavaScript data types, and give an example of each.
+
+ ```js
   // PRIMITIVE
 
   // string
@@ -208,3 +119,102 @@
   // function (also a kind of object)
   function add(a,b) { return a+b; }
   ```
+
+
+1. In JavaScript, when should you use =, ==, and ===?
+
+1. In the `scores` array below, how would you change the last score to 27?
+
+	```js
+	var scores = [26, 28, 30, 28, 17];
+	```
+
+1. In the `address` object below, how would you add the information that the "floor" for this address is 5?
+
+	```js
+	var address = {
+			city: "San Francisco",
+			number: 225,
+			street: "Bush St.",
+			state: "CA",
+			zip: 94104
+	};
+	```
+
+
+1. What is the output of the following code?
+
+	```js
+	var colors = ["red", "yellow", "green"];
+	for (var i = colors.length-1; i >= 0; i = i-1) {
+			console.log(colors[i]);
+	}
+	```
+
+
+1. Consider the `combine` function below. What value does the `combine` function return for each of the function calls beneath it?
+
+	```js
+	function combine(a, b) {
+				return a + b;
+		}
+
+
+	// input               		    //=> returned value 
+	var x = 1;
+	var y = 7;
+
+	combine(x, y);       		      //=> ______________
+
+	combine(combine(x, y), 5);    //=> ______________
+	```
+
+
+1. Contrast `console.log` and `return`.
+
+
+1. Fill in the `tempToWord` function below so that it returns `"warm"` or `"cool"` depending on the input temperature. For any `temp` above 60 degrees, `tempToWord` should return `"warm"`.  For any temp 60 degrees or below, it should return `"cool"`.
+	
+	```js
+	function tempToWord(temp) {
+
+
+
+
+
+
+	}
+	```
+
+
+
+1. Based on the `tempToWord` code you just wrote, what is the value returned for each of the following function calls:
+
+	```js
+	// input         	  //=> returned value
+
+	tempToWord(30);  	  //=>
+
+	tempToWord(60); 	  //=>
+
+	tempToWord(70);  	  //=>
+	```
+
+##Section 6: JavaScript for Web
+
+1. My JavaScript code is in a file called script.js, in the same directory as my index.html.  What can I write in index.html to connect my JavaScript to my HTML?
+
+1. What is an "event"? An "event listener"? 
+
+1. Which of the following tasks are capabilities of JavaScript? Choose two and write down the code for completing the task.
+
+	* Add an event listener to a DOM element  
+	* Create a DOM element  
+	* Add a DOM element to the page  
+	* Access the HTML inside an element   
+	* Change the text inside an element   
+	* Change the source of an image  
+	* Add a class to an element  
+
+1. I'm designing a to do list website where users can see a list of tasks they need to do, use a form to input a new task, and click on tasks to cross them off on the list. Pick three of the JavaScript capabilities you found in the last question. How would you advise me to use these for my to do list app?
+
