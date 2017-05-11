@@ -1,4 +1,4 @@
-#Instructions for Submitting Homework
+# Instructions for Submitting Homework
 
 Check your class schedule for nightly homeworks and weekend labs.
 
