@@ -57,20 +57,20 @@ In order to submit homework, you must first *fork & clone* the homeowork/lab rep
 When you're ready to submit your homework (and it's okay if you only have a partial solution, we still want to see it!), you need to push your changes to github and create a pull request:
 
 
-2. Make sure you've added, committed, and pushed all your updates to your fork of the repo on GitHub. 
+1. Make sure you've added, committed, and pushed all your updates to your fork of the repo on GitHub. 
 
     ``` bash
     git push origin master # push your changes to your remote repo
     ```
 
-7. Once you're done with the assignment and have committed and pushed ALL of your changes to GitHub, it's time to make a pull request back to the original repo. Go to your forked copy of the repo on GitHub, and click the "Pull Request" button.
+2. Once you're done with the assignment and have committed and pushed ALL of your changes to GitHub, it's time to make a pull request back to the original repo. Go to your forked copy of the repo on GitHub, and click the "Pull Request" button.
 
   ![make new pull request button screenshot](https://cloud.githubusercontent.com/assets/3010270/13687969/7ed9d38c-e6d3-11e5-9510-ac0fbf1f22e9.png)
 
-8. GitHub takes you to a new view and asks if you want to create the pull request. We want to know how each assignment went! Please add the following information to each of your homework pull requests:
+3. GitHub takes you to a new view and asks if you want to create the pull request. We want to know how each assignment went! **Please add the following information to each of your homework pull requests**:
 
 	```
-	w01 d01
+	week 1 day 1
 
 	comfort: 3/5
 	completeness: 4/5
@@ -78,7 +78,7 @@ When you're ready to submit your homework (and it's okay if you only have a part
 	```
 
 
-1. Click the green button, and that's it - you've now created a pull request to submit the homework or lab!
+4. Click the green button, and that's it - you've now created a pull request to submit the homework or lab!
 
   ![create/submit pull request button screenshot](https://cloud.githubusercontent.com/assets/7833470/10625507/bc97d38a-7758-11e5-8fe9-e4846e06e454.png)
 
