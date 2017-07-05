@@ -101,15 +101,12 @@
          Cleaning up the bundler cache.
   -----> Writing config/database.yml to read from DATABASE_URL
   -----> Preparing app for Rails asset pipeline
-         Running: rails assets:precompile
+         Running: rake assets:precompile
          I, [2014-05-02T18:02:09.672047 #732]  INFO -- : Writing /tmp/build_625a98e6-1b9e-4e57-ba48-8f9cd7bf7d18/public/assets/application-c8d048bf2b32f85ef4807549fa44b21b.js
          I, [2014-05-02T18:02:09.694428 #732]  INFO -- : Writing /tmp/build_625a98e6-1b9e-4e57-ba48-8f9cd7bf7d18/public/assets/application-d0b54dd563966c42aad5fd85b1c1f713.css
          Asset precompilation completed (6.52s)
          Cleaning assets
-         Running: rails assets:clean
-  -----> WARNINGS:
-         Include 'rails_12factor' gem to enable all platform features
-         See https://devcenter.heroku.com/articles/rails-integration-gems for more information.
+         Running: rake assets:clean
 
   -----> Compressing... done, 21.4MB
   -----> Launching... done, v6
@@ -125,7 +122,7 @@
 3. Your deployed app has a separate database from your development environment. To set up your Heroku database, run your migrations in production:
 
   ```zsh
-  ➜  heroku run rails db:migrate
+  ➜  heroku run rake db:migrate
   ```
 
 4. If all went well, you should be able to visit your live application by running:
@@ -179,7 +176,7 @@ Hopefully your app works on Heroku, however, you may see a sad page that looks l
   * From the Terminal, precompile your assets:
 
     ```zsh
-    ➜  rails assets:precompile
+    ➜  rake assets:precompile
     ```
 
   * Add and commit new changes, then try pushing to Heroku again:
