@@ -46,23 +46,16 @@
 
   gem 'pg'
   ```
+  
+1. Just to be safe, formally specify your ruby version in at the bottom of your `Gemfile` (you can run `ruby -v` to find out!):
 
-2. Add the `rails_12factor` gem to your `Gemfile` in the production group:
 
   ```ruby
   #
   # Gemfile
   #
 
-  group :production do
-    gem 'rails_12factor'
-  end
-  ```
-
-3. Run this command in your Terminal to bundle install locally:
-
-  ```zsh
-  ➜  bundle install --without production
+  ruby "2.4.1"
   ```
 
 ## Deploy to Heroku
@@ -181,7 +174,7 @@ Hopefully your app works on Heroku, however, you may see a sad page that looks l
 
 ### Asset Compilation Issues
 
-**If you have errors with ASSET COMPILATION, try this possible solution**
+**Only if you have errors with ASSET COMPILATION, try this possible solution**
 
   * From the Terminal, precompile your assets:
 
@@ -204,7 +197,7 @@ Hopefully your app works on Heroku, however, you may see a sad page that looks l
 
 **Basic Heroku Rails, PostgreSQL Setup:**
 
-* <a href="https://devcenter.heroku.com/articles/rails4" target="_blank">Rails 4 on Heroku</a>
+* <a href="https://devcenter.heroku.com/articles/getting-started-with-rails5" target="_blank">Rails 5 on Heroku</a>
 * <a href="https://devcenter.heroku.com/articles/heroku-postgresql" target="_blank">Heroku Postgres</a>
 * <a href="https://devcenter.heroku.com/articles/rake" target="_blank">Running Rake Commands</a>
 
