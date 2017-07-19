@@ -5,7 +5,7 @@
 
 2) Sign up for an account with heroku: https://www.heroku.com/
 
-3) Install the heroku toolbelt (if you hanve't done so already):
+3) Install the heroku toolbelt (if you haven't done so already):
 
 **OSX users:**
 <a href="https://toolbelt.heroku.com/download/osx">Click this link to download the ToolBelt for OSX</a>  Run the file and follow the prompts to install.
